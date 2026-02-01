@@ -48,7 +48,7 @@ const response = await db.namespace('employees1').query({
 const employeeData = response.matches.map((match) => match.metadata)
 
 const aiResponse = await openai.responses.create({
-  model: 'gpt-4o-mini',
+  model: 'gpt-5.2',
   input: `The user's query / question was:\n${query}\n\nThe following data was retrieved related to this query:\n${JSON.stringify(employeeData)}\n\nPlease provide a detailed response to the user's query based on the retrieved data.`,
 })
 
